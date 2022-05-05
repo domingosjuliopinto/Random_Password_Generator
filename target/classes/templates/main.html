@@ -1,0 +1,151 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head>
+    <title>Random Password Generator</title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    </head>
+    <style>
+    body{
+    
+    background-color:#8080ff;
+    background-size: 100% 100%;
+    background-blend-mode: lighten;
+    height:100% ;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    
+
+    background-position: center;
+    
+    
+}
+.heading{
+    background-color: #ff6666;
+    
+    padding: 10px 10px 10px 10px;
+    margin: 10px;
+    text-align:center;
+ bottom: 80%;   
+    border-radius: 25px;
+    opacity: 0.95;
+}
+.content{
+    background-color:#ff6666;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: black;
+    opacity: 0.95;
+   
+}
+
+.loginbox{
+    width: 320px;
+    height: 420px;
+    background:#8f00b3;
+    opacity: 0.8;
+    color: #33ff33;
+    top: 68%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing:border-box;
+    padding: 20px 30px;
+    border-radius: 10px;
+    
+}
+
+.inform{
+    margin: 0px;
+    padding: 0px 0px 50px;
+    text-align: center;
+    font-size:12px;
+    
+}
+
+.loginbox p{
+    margin: 0px;
+    padding:0px;
+    font-weight:bold;
+    
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="number"],[type="text"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    
+}
+
+
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height:40px;
+    background:#fb2525;
+    color:#fff;
+    font-size:20px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover
+{
+    cursor:pointer;
+    background: #ffc107;
+    color:#000;
+}
+
+
+
+::placeholder{
+    color: black;
+    opacity: 1;
+}
+    
+    </style>
+    <body>
+        <div class="heading">
+            <h1><i class="fas fa-calculator"></i>Random Password Generator</h1>
+        </div>
+        <div class="content">
+        <p>IF you have forgotten your passwrod and want a new one.But you are lazy so dont want to think about one yourself . Then you have come on the right page . We will Generate a random password for you.Some Features are mentioned below.</p>
+            <ul>
+                <li>Password will be generated for any numbers of characters you will give till 20.And the default value is already set to 5.</li>
+                <li>If you are logged in , the password generated will be stored in database.Which can be restored </li>
+            </ul>
+            
+        </div>
+        <div class="loginbox">
+            <div class="inform">
+        <h1 ><i class="fas fa-calculator"></i> Random Password Generator</h1>
+            </div>
+            <form action="/Generate">
+           
+                <p>Total Numbers</p>
+                <input type="number" name="number" value="5">
+               
+                <input type="submit" name="submit" value="Generate"><p>Password generated for</p><p th:text="${pg.number}">
+                <p th:text="${pg.genpass}" ></p><br>
+                
+                 
+            </form>
+            
+        </div>
+    </body>
+</html>
