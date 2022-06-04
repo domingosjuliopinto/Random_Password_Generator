@@ -11,7 +11,7 @@ import java.sql.*;
 public class rpgcontroller {
 	public String usernameglobal="";
 	
-	@GetMapping("/login")
+	@GetMapping("/")
 	@ResponseBody
 	
 	
@@ -24,6 +24,7 @@ public class rpgcontroller {
 		login.setPassword(password);
 		
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			//In the below line you might have to change the port no (3306) and the database name (oopm) according to what you have used. 
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/oopm","root","");
 			PreparedStatement stmt = con.prepareStatement("select * from userinfo where username=? and password=?");
 			stmt.setString(1,login.getUsername());
